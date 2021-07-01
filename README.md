@@ -1,5 +1,5 @@
 # initial-D
-#python_exercise_!
+#python_exercise_1
 
 a = input("what's  your name?")
 b= input("how old are you?")

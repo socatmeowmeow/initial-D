@@ -1,0 +1,14 @@
+import urllib.request as req
+url = "https://www.asus.com/tw/Laptops/For-Gaming/All-series/filter?SubSeries=ROG-Strix"
+request = req.Request(url,headers={"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36"
+                                  })
+with req.urlopen(request) as response:
+    data = response.read().decode("utf-8")
+
+import bs4
+
+root = bs4.BeautifulSoup(data, "html.parser")
+product_title = root.find_all("h2")
+
+for title in product_title:
+    print(title)
